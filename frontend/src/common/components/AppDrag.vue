@@ -4,7 +4,7 @@ import { DATA_TRANSFER_PAYLOAD } from "@/common/constants";
 const props = defineProps({
   draggable: {
     type: Boolean,
-    required: false,
+    default: false,
   },
   dataTransfer: {
     type: Object,
@@ -12,10 +12,10 @@ const props = defineProps({
   },
 });
 
-function onDragStart({ dataTransfer }) {
-  const data = JSON.stringify(props.transferData);
+const onDragStart = ({ dataTransfer }) => {
+  const data = JSON.stringify(props.dataTransfer);
   dataTransfer.setData(DATA_TRANSFER_PAYLOAD, data);
-}
+};
 </script>
 
 <template>
