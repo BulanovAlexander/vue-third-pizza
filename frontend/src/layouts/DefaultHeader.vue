@@ -3,20 +3,22 @@
 <template>
   <header class="header">
     <div class="header__logo">
-      <a href="index.html" class="logo">
+      <RouterLink :to="{ name: 'home' }" class="logo">
         <img
           src="@/assets/img/logo.svg"
           alt="V!U!E! Pizza logo"
           width="90"
           height="40"
         />
-      </a>
+      </RouterLink>
     </div>
     <div class="header__cart">
-      <a href="cart.html">0 ₽</a>
+      <RouterLink :to="{ name: 'cart' }">0 ₽</RouterLink>
     </div>
     <div class="header__user">
-      <a href="#" class="header__login"><span>Войти</span></a>
+      <RouterLink :to="{ name: 'profile' }" class="header__login"
+        ><span>Войти</span></RouterLink
+      >
     </div>
   </header>
 </template>
